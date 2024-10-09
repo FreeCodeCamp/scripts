@@ -31,15 +31,11 @@ import { writeData } from "./utils/writeData";
 
   logHandler.log("debug", "Fetching News Data");
 
-  const { news, urls } = await getNewsData(credentials);
+  const { news } = await getNewsData();
 
   logHandler.log("debug", "Writing News Data");
 
   await writeData(news, "News", "news");
-
-  logHandler.log("debug", "Writing News URLs");
-
-  await writeData(urls, "News URLS", "news-urls");
 
   logHandler.log("debug", "Fetching Crowdin Data");
 

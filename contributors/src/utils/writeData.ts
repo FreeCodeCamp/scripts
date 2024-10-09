@@ -40,9 +40,9 @@ export const writeData = async (
   }
 
   if (type === "News") {
-    parsedData += "name,news-url,posts,email\n";
+    parsedData += "name,news-url,posts\n";
     (data as NewsContributor[]).forEach((datum) => {
-      parsedData += `${datum.name},${datum.url},${datum.posts},${datum.email}\n`;
+      parsedData += `${datum.name},${datum.url},${datum.posts}\n`;
     });
   }
 
